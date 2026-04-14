@@ -87,7 +87,7 @@ This will print all EDA summaries and hypothesis test results to the console, an
 2. **Focus** converted to numeric; rows with missing focus values dropped.
 3. **Genre labels** standardized from Turkish free-text into 7 canonical categories: Classical, Lo-fi, Jazz, Pop, Rap / Hip-hop, Rock, Electronic (+ Other).
 4. **Study hours** encoded as an ordered categorical variable; a numeric midpoint version (`study_hours_num`) created for correlation analysis.
-5. **Spotify genres** mapped to the same 7 categories; mean audio features aggregated per genre.
+5. **Spotify genres** mapped to the same 7 categories; Spotify's `study` genre is mapped to Lo-fi as they represent the same acoustic context. Mean audio features aggregated per genre.
 6. **Merge:** Music-listener rows in the survey are joined with Spotify group averages on the `genre` key.
 
 ---
@@ -162,12 +162,12 @@ All tests use **α = 0.05**.
 
 | Feature | r | p-value | Significant? |
 |---|---|---|---|
-| energy | −0.0423 | 0.7147 | No |
-| danceability | −0.0713 | 0.5375 | No |
-| tempo | −0.0931 | 0.4208 | No |
-| valence | −0.0696 | 0.5476 | No |
-| acousticness | +0.0306 | 0.7914 | No |
-| instrumentalness | +0.0750 | 0.5168 | No |
+| energy | −0.0007 | 0.9951 | No |
+| danceability | −0.1024 | 0.3597 | No |
+| tempo | −0.0355 | 0.7513 | No |
+| valence | −0.0356 | 0.7507 | No |
+| acousticness | +0.0038 | 0.9727 | No |
+| instrumentalness | −0.0624 | 0.5773 | No |
 
 - **Conclusion:** Fail to reject H₀ for all features. No statistically significant linear correlation found between any Spotify audio feature and self-reported focus.
 
@@ -189,7 +189,7 @@ All tests use **α = 0.05**.
 | H1 | Music → Focus | t-test | t = −0.41 | 0.681 | Not significant |
 | H2 | Genre → Focus | One-way ANOVA | F = 2.28 | **0.037** | **Significant** |
 | H3 | Study hours → Focus | One-way ANOVA | F = 4.03 | **0.009** | **Significant** |
-| H4 | Audio features → Focus | Pearson r | — | > 0.42 (all) | Not significant |
+| H4 | Audio features → Focus | Pearson r | — | > 0.36 (all) | Not significant |
 | H5 | Music → Study hours | Chi-square | χ² = 1.97 | 0.579 | Not significant |
 
 ---
@@ -208,11 +208,10 @@ All tests use **α = 0.05**.
 - **Sample size:** 148 responses is sufficient for preliminary analysis but limits the power of subgroup tests (e.g., genre groups with n < 10).
 - **Self-reported focus:** Focus is subjective and measured with a coarse 1–5 scale; objective measures (e.g., task performance, eye-tracking) would be more reliable.
 - **Causality:** All findings are correlational. Experimental designs (e.g., randomly assigning music conditions) would be needed to establish causal effects.
-- **Genre matching:** Lo-fi was not matched to a Spotify genre label, which may introduce noise in the merged dataset.
 - **Future work:** Apply machine learning models (e.g., ordinal logistic regression, random forests) to predict focus from combined survey + audio feature inputs; collect longitudinal data tracking the same students across multiple sessions.
 
 ---
 
 ## Academic Integrity
 
-AI tools (Claude, Chatgpt) were used to assist with code writing, statistical interpretation, and README writing. All prompts and outputs were reviewed and verified by the student.
+AI tools (Claude, ChatGPT) were used to assist with code writing, statistical interpretation, and README writing. All prompts and outputs were reviewed and verified by the student.
