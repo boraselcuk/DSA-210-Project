@@ -215,4 +215,4 @@ All tests use **α = 0.05**.
 
 ## Academic Integrity
 
-AI tools (Claude, Chatgpt) were used to assist with code structuring, statistical interpretation, and README writing. All prompts and outputs were reviewed and verified by the student.
+AI tools (Claude, Chatgpt) were used to assist with code writing, statistical interpretation, and README writing. All prompts and outputs were reviewed and verified by the student.
