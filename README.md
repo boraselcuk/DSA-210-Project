@@ -4,7 +4,7 @@
 
 ---
 
-## Project Overview
+## Motivation
 
 This project investigates whether and how music listening habits affect university students' study productivity, specifically in terms of **focus levels** (self-reported, 1–5 scale) and **daily study duration**. Survey data collected from university students is enriched with Spotify audio feature data to explore whether the *acoustic properties* of preferred genres are associated with focus levels.
 
