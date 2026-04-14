@@ -48,7 +48,7 @@ def clean_survey_genre(g):
 
     if g in ["klasik"]:
         return "Classical"
-    elif g in ["lo-fi", "lofi"]:
+    elif g in ["lo-fi", "lofi", "study"]:
         return "Lo-fi"
     elif g in ["jazz"]:
         return "Jazz"
@@ -118,7 +118,7 @@ def map_spotify_genre(g):
         return "Classical"
 
     # Lo-fi
-    elif "lofi" in g or "lo-fi" in g:
+    elif "lofi" in g or "lo-fi" in g or "study" in g:
         return "Lo-fi"
 
     # Jazz
