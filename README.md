@@ -289,4 +289,11 @@ Three distinct student profiles emerge: students who study a lot regardless of m
 
 ## Academic Integrity
 
-AI tools (Claude, ChatGPT) were used to assist with code writing, statistical interpretation, and README writing. All prompts and outputs were reviewed and verified by the student.
+AI tools (Claude, ChatGPT) were used for:
+
+- Writing and refactoring Python code (analysis.py, ml.py)
+- Drafting and structuring the README
+- Reviewing statistical interpretations and findings
+- Converting .py scripts into executed .ipynb notebooks
+
+All data collection, hypothesis formulation, and final interpretation were performed independently. All AI-generated outputs were reviewed and verified by the student.
