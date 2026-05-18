@@ -136,40 +136,50 @@ All tests use **α = 0.05**.
 
 | # | Question | Test | Statistic | p-value | Result |
 |---|---|---|---|---|---|
-| H1 | Music → Focus | t-test | t = −0.41 | 0.681 | Not significant |
-| H2 | Genre → Focus | One-way ANOVA | F = 2.28 | **0.037** | **Significant** |
-| H3 | Study hours → Focus | One-way ANOVA | F = 4.03 | **0.009** | **Significant** |
-| H4 | Audio features → Focus | Pearson r | — | > 0.36 (all) | Not significant |
-| H5 | Music → Study hours | Chi-square | χ² = 1.97 | 0.579 | Not significant |
+| H1 | Music → Focus | t-test | t = −0.70 | 0.482 | Not significant |
+| H2 | Genre → Focus | One-way ANOVA | F = 1.84 | 0.091 | Not significant |
+| H3 | Study hours → Focus | One-way ANOVA | F = 3.76 | **0.012** | **Significant** |
+| H4 | Audio features → Focus | Pearson r | — | > 0.17 (all) | Not significant |
+| H5 | Music → Study hours | Chi-square | χ² = 2.19 | 0.533 | Not significant |
 
 ### H1 — Music Listening vs No Music on Focus
 
 - **Test:** Independent samples t-test
-- **Result:** t = −0.4125, p = 0.6806
+- **Result:** t = −0.7048, p = 0.4820
 - **Conclusion:** Fail to reject H₀. No significant difference in focus between music listeners and non-listeners.
 
 ### H2 — Genre vs Focus
 
 - **Test:** One-way ANOVA
-- **Result:** F = 2.2778, p = 0.0371
-- **Conclusion:** Reject H₀. Jazz, Rock, and Classical listeners report the highest focus; Lo-fi and Other the lowest.
+- **Result:** F = 1.8404, p = 0.0908
+- **Conclusion:** Fail to reject H₀. No significant difference in focus across music genres.
 
 ### H3 — Study Duration vs Focus
 
 - **Test:** One-way ANOVA
-- **Result:** F = 4.0291, p = 0.0087
+- **Result:** F = 3.7647, p = 0.0121
 - **Conclusion:** Reject H₀. Students who study longer report significantly higher focus.
 
 ### H4 — Spotify Audio Features vs Focus
 
 - **Test:** Pearson correlation per feature
-- **Result:** No feature showed a significant correlation (all p > 0.36).
-- **Conclusion:** Fail to reject H₀ for all features.
+- **H₀:** No linear correlation between audio feature and focus.
+
+| Feature | r | p-value | Significant? |
+|---|---|---|---|
+| energy | −0.1265 | 0.3191 | No |
+| danceability | −0.2093 | 0.0970 | No |
+| tempo | −0.2427 | 0.0533 | No |
+| valence | −0.0090 | 0.9436 | No |
+| acousticness | +0.1256 | 0.3226 | No |
+| instrumentalness | +0.1923 | 0.1278 | No |
+
+- **Conclusion:** Fail to reject H₀ for all features. No statistically significant linear correlation found between any Spotify audio feature and self-reported focus.
 
 ### H5 — Music Listening vs Study Duration
 
 - **Test:** Chi-square test of independence
-- **Result:** χ² = 1.9674, p = 0.5792
+- **Result:** χ² = 2.1928, p = 0.5334, df = 3
 - **Conclusion:** Fail to reject H₀. No significant association between music listening and study duration.
 
 ---
@@ -260,8 +270,8 @@ Three distinct student profiles emerge: students who study a lot regardless of m
 ## Key Findings
 
 1. **Listening to music itself does not significantly affect focus** (H1, H5). Whether a student listens to music or not has no measurable impact on focus levels.
-2. **Music genre matters** (H2, p = 0.037). Jazz, Rock, and Classical listeners report the highest focus; Lo-fi and Other the lowest.
-3. **Study duration is the strongest predictor of focus** (H3, p = 0.009; RF importance = 0.49). Students who study longer report significantly higher focus.
+2. **Music genre shows a trend but is not statistically significant** (H2, p = 0.091). Jazz, Rock, and Classical listeners tend to report higher focus than Lo-fi and Other listeners, but the difference did not reach significance.
+3. **Study duration is the strongest predictor of focus** (H3, p = 0.012; RF importance = 0.49). Students who study longer report significantly higher focus.
 4. **Acoustic properties of genres do not directly predict focus** (H4). No individual Spotify audio feature showed a significant linear correlation with focus.
 5. **Clustering reveals three student profiles**: high-study mixed-music students (best focus), low-study no-music students (moderate focus), and low-study music-always students (lowest focus).
 
@@ -273,6 +283,7 @@ Three distinct student profiles emerge: students who study a lot regardless of m
 - **Self-reported focus:** Subjective 1–5 scale; objective measures would be more reliable.
 - **Causality:** All findings are correlational.
 - **Class imbalance:** Focus class 3 dominates (n=59), which may bias classifiers.
+- **Future work:** Collect more data, try additional models (SVM, XGBoost), apply SMOTE for class balancing, and explore regression instead of classification for focus prediction.
 
 ---
 
