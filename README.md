@@ -296,4 +296,4 @@ AI tools (Claude, ChatGPT) were used for:
 - Reviewing statistical interpretations and findings
 - Converting .py scripts into executed .ipynb notebooks
 
-All data collection, hypothesis formulation, and final interpretation were performed independently. All AI-generated outputs were reviewed and verified by the student.
+All data collection, hypothesis formulation, and final interpretation were performed independently by the student. All AI-generated outputs were reviewed and verified by the student.
